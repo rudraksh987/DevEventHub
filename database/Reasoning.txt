@@ -1,0 +1,14 @@
+Only 2 minimal changes:
+1️⃣ Changed this:
+BookingSchema.pre('save', async function (next) {
+
+Into:
+BookingSchema.pre('save', async function () {
+
+2️⃣ Removed:
+return next(error);
+next();
+
+Replaced with:
+throw error;
+
